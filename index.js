@@ -11,7 +11,7 @@ function trimProperties(obj) {
   for (const key in obj) {
     newObj[key] = obj[key].trim();
   }
-  return newObj
+  return newObj;
 }
 
 /**
@@ -43,14 +43,7 @@ function findLargestInteger(integers) {
     if (integers[i].integer > result) {
       result = integers[i].integer;
     }
-
-  // let largest
-  // for(let i = 0; i < integers.length; i++ )
-  // largest = largest ?
-  // largest < integers[i].integer ?
-  // integers[i].integer :
-  // largest :
-  // integers[i].integer
+  return result;
 }
 
 class Counter {
@@ -108,7 +101,7 @@ class Seasons {
    */
   next() {
     let season = this.seasons[this.seasonIndex];
-    if (this.seasonIndex <= 3) {
+    if (this.seasonIndex <= 2) {
       this.seasonIndex++;
       return season;
     } else {
@@ -131,6 +124,7 @@ class Car {
     // ✨ initialize whatever other properties are needed
     this.name = name;
     this.mpg = mpg;
+    this.tankCapacity = tankSize;
   }
 
   /**
@@ -170,16 +164,14 @@ class Car {
    * focus.refuel(99) // returns 600 (tank only holds 20)
    */
   refuel(gallons) {
-    const maxDistance = this.tank * this.mpg
-    const tankCapacity = this.tank
-    if(this.tank + gallons > tankCapacity){
-      this.tank = tankCapacity
-    }else{
-      this.tank = this.tank + gallons
+    const maxDistance = this.tank * this.mpg;
+    if (this.tank + gallons > this.tankCapacity) {
+      this.tank = this.tankCapacity;
+    } else {
+      this.tank = this.tank + gallons;
     }
-    return maxDistance
+    return maxDistance;
   }
-  
 }
 
 /**
@@ -196,10 +188,10 @@ class Car {
  * })
  */
 function isEvenNumberAsync(number) {
-  if(number % 2 === 0){
-     return true
-  }else {
-    return false
+  if (number % 2 === 0) {
+    return true;
+  } else {
+    return false;
   }
 }
 
